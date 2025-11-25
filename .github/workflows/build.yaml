@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,3 +29,10 @@ jobs:
         with:
           name: python-dist
           path: dist/
+
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.1.0
+          files: dist/*
