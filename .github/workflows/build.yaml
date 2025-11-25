@@ -22,3 +22,9 @@ jobs:
 
       - name: Build Package
         run: python -m build
+
+      - name: Upload dist artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
