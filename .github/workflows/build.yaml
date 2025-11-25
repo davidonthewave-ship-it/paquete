@@ -1,9 +1,9 @@
 name: Build Python Package
 
-on: 
+on:
   push:
     branches: [ main ]
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,14 +11,14 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
-        
-      - name: Set Up Ptyhon
-        uses: actions/setup-python
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install Build Module
         run: pip install build
-      
+
       - name: Build Package
         run: python -m build
