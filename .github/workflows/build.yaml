@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
+      - '.github/**'
       - '**.py'
       - 'src/**'
       - '!dist-builds/**'
